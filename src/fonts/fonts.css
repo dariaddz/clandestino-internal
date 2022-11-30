@@ -1,0 +1,17 @@
+/* Gilroy */
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./Radomir\ Tinkov\ -\ Gilroy-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./Radomir\ Tinkov\ -\ Gilroy-ExtraBold.otf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
