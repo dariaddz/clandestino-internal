@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/clandestino-internal/static/css/main.cb046fd4.css",
-    "main.js": "/clandestino-internal/static/js/main.7a820de5.js",
+    "main.js": "/clandestino-internal/static/js/main.59a26458.js",
     "static/js/787.d3de9ba7.chunk.js": "/clandestino-internal/static/js/787.d3de9ba7.chunk.js",
     "static/media/Radomir Tinkov - Gilroy-ExtraBold.otf": "/clandestino-internal/static/media/Radomir Tinkov - Gilroy-ExtraBold.f0feeaf3468f1ac2b9cd.otf",
     "static/media/Radomir Tinkov - Gilroy-Light.otf": "/clandestino-internal/static/media/Radomir Tinkov - Gilroy-Light.5ac188463a0bf78b3351.otf",
     "index.html": "/clandestino-internal/index.html",
     "main.cb046fd4.css.map": "/clandestino-internal/static/css/main.cb046fd4.css.map",
-    "main.7a820de5.js.map": "/clandestino-internal/static/js/main.7a820de5.js.map",
+    "main.59a26458.js.map": "/clandestino-internal/static/js/main.59a26458.js.map",
     "787.d3de9ba7.chunk.js.map": "/clandestino-internal/static/js/787.d3de9ba7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb046fd4.css",
-    "static/js/main.7a820de5.js"
+    "static/js/main.59a26458.js"
   ]
 }
