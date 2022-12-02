@@ -1,0 +1,4 @@
+.search:hover,
+.search:focus {
+background-color: red;
+}
