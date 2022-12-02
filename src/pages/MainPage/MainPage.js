@@ -6,6 +6,7 @@ import {
 } from '../../fonts-colors/styledComponents';
 import color from '../../fonts-colors/colors';
 import Search from '../../components/Search';
+import Navigation from '../../components/Navigation';
 // import menuIcon from '../../images/menu-burger.svg';
 
 export default function MainPage() {
@@ -44,7 +45,7 @@ export default function MainPage() {
         </Header>
       </div>
       <Search></Search>
-      <nav>navigation</nav>
+      <Navigation />
       <div>music list</div>
     </>
   );
