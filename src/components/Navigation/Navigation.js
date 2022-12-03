@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <ul>
       {music.map(musicItem => (
-        <li>{musicItem.name}</li>
+        <li key={musicItem._id}>{musicItem.name}</li>
       ))}
     </ul>
   );

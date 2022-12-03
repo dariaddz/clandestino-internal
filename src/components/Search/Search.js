@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import color from '../../fonts-colors/colors';
 import s from './Search.module.css';
 // import music from '../../music.json';
@@ -5,7 +6,12 @@ import s from './Search.module.css';
 import { SearchForm } from '../../fonts-colors/styledComponents';
 
 export default function Search() {
-  // const musicBd = music;
+  const [query, SetQuery] = useState('');
+
+  function changeFilter(evt) {
+    const value = evt.currentTarget.value;
+    SetQuery(value);
+  }
 
   return (
     <div
@@ -20,7 +26,9 @@ export default function Search() {
         <SearchForm
           type="text"
           className={s.search}
-          placeholder="Название композиции"
+          placeholder="найти композицию..."
+          onChange={changeFilter}
+          filter={query}
         />
         {/* <button type="submit">найти композицию</button> */}
 

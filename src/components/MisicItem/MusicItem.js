@@ -6,21 +6,30 @@ import {
   MediaTypes,
   MediaButton,
   MediaList,
+  MusicName,
 } from '../../fonts-colors/styledComponents';
 import s from './MusicItem.module.css';
 
 import music from '../../music.json';
+// import filter from '../Search';
 
-export default function MusicItem() {
+export default function MusicItem(filter) {
+  console.log(filter);
+
+  //    const contactsToShow = data?.filter(({ name }) =>
+  //      name.toLowerCase().includes(filterValue.toLowerCase())
+  //    );
+
+  // query === '': listToShow = music ? listToShow=music.filter.toLowerCase
   return (
     <>
       {music.map(musicItem => (
         <Thumb>
-          <h3>{musicItem.name}</h3>
+          <MusicName>{musicItem.name}</MusicName>
           <MediaTypes>
-            <MediaButton className={s.mediaBtn}>video</MediaButton>
-            <MediaButton className={s.mediaBtn}>notes</MediaButton>
-            <MediaButton className={s.mediaBtn}>audio</MediaButton>
+            <MediaButton className={s.mediaBtn}>видео</MediaButton>
+            <MediaButton className={s.mediaBtn}>ноты</MediaButton>
+            <MediaButton className={s.mediaBtn}>аудио</MediaButton>
           </MediaTypes>
           <MediaList>
             <VideoList>

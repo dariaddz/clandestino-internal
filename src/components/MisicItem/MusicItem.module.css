@@ -2,3 +2,7 @@
 .mediaBtn:focus{
      box-shadow: 0 7px 9px -3px #49bbedff;
 }
+
+.btnActive{
+     box-shadow: 0 7px 9px -3px #49bbedff;
+}

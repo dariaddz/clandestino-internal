@@ -90,12 +90,15 @@ export const Music = styled.div`
 // ==========Music item ==========//
 export const Thumb = styled.div`
 margin: 10px auto;
-// margin-right:auto;
-// margin-left:auto;
+padding-top: 10px;
 text-align:center;
   width: 250px;
   border: 1px solid ${color.accentColor}}
 
+`;
+export const MusicName = styled.h3`
+  font-size: 16px;
+  text-transform: uppercase;
 `;
 
 export const MediaTypes = styled.div`

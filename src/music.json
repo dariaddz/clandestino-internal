@@ -1,25 +1,38 @@
-[{
-  "_id": {
-    "$oid": "6387380205113eafb8815551"
+[
+  {
+    "_id": {
+      "$oid": "6387380205113eafb8815551"
+    },
+    "name": "samba",
+    "video": "",
+    "notes": "",
+    "audio": ""
   },
-  "name": "samba",
-  "video": "",
-  "notes": "",
-  "audio": ""
-},{
-  "_id": {
-    "$oid": "6387386205113eafb8815552"
+  {
+    "_id": {
+      "$oid": "6387386205113eafb8815552"
+    },
+    "name": "funk",
+    "video": "",
+    "notes": "",
+    "audio": ""
   },
-  "name": "funk",
-  "video": "",
-  "notes": "",
-  "audio": ""
-},{
-  "_id": {
-    "$oid": "6387387105113eafb8815553"
+  {
+    "_id": {
+      "$oid": "6387387105113eafb8815553"
+    },
+    "name": "igor",
+    "video": "",
+    "notes": "",
+    "audio": ""
   },
-  "name": "igor",
-  "video": "",
-  "notes": "",
-  "audio": ""
-}]
+  {
+    "_id": {
+      "$oid": "6387387105113eafb8813653"
+    },
+    "name": "afro",
+    "video": "",
+    "notes": "",
+    "audio": ""
+  }
+]
