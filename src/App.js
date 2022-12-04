@@ -1,4 +1,6 @@
 import MainPage from './pages/MainPage';
+
+import LoginPage from './pages/LoginPage';
 import { Container } from './fonts-colors/styledComponents';
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
     // }}
     >
       <MainPage />
+      <LoginPage />
     </Container>
   );
 }

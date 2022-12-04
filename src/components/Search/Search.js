@@ -3,7 +3,11 @@ import color from '../../fonts-colors/colors';
 import s from './Search.module.css';
 // import music from '../../music.json';
 
-import { SearchForm } from '../../fonts-colors/styledComponents';
+import {
+  SearchForm,
+  Page,
+  FormTitle,
+} from '../../fonts-colors/styledComponents';
 
 export default function Search() {
   const [query, SetQuery] = useState('');
@@ -14,7 +18,7 @@ export default function Search() {
   }
 
   return (
-    <div
+    <Page
       style={{
         backgroundColor: `${color.accentColor}`,
         // paddingTop: ,
@@ -23,10 +27,11 @@ export default function Search() {
       }}
     >
       <form>
+        <FormTitle>Найти композицию</FormTitle>
         <SearchForm
           type="text"
           className={s.search}
-          placeholder="найти композицию..."
+          placeholder="Название..."
           onChange={changeFilter}
           filter={query}
         />
@@ -34,6 +39,6 @@ export default function Search() {
 
         {/* https://www.youtube.com/watch?v=MY6ZZIn93V8 */}
       </form>
-    </div>
+    </Page>
   );
 }

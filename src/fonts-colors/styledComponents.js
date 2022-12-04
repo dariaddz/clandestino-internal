@@ -10,11 +10,13 @@ export const sizes = {
   mobileMini: '320px',
   mobile: '425px',
   tablet: '768px',
+  desctop: '1020px',
 };
 
 export const device = {
   mobile: `(min-width: ${sizes.mobile})`,
   tablet: `(min-width: ${sizes.tablet})`,
+  desctop: `(min-width: ${sizes.desctop})`,
 };
 
 // ============header=================//
@@ -52,12 +54,30 @@ export const Header = styled.header`
 
 export const H1 = styled.h1`
   font-size: 16px;
+  @media ${device.mobile} {
+    font-size: 18px;
+  }
+  @media ${device.tablet} {
+    font-size: 20px;
+  }
+  @media ${device.desctop} {
+    font-size: 26px;
+  }
 `;
 
 export const H2 = styled.h2`
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 12px;
+  @media ${device.mobile} {
+    font-size: 14px;
+  }
+  @media ${device.tablet} {
+    font-size: 16px;
+  }
+  @media ${device.desctop} {
+    font-size: 20px;
+  }
 `;
 
 export const BurgerButton = styled.button`
@@ -73,18 +93,35 @@ export const BurgerButton = styled.button`
 // ==========Search ==========//
 
 export const SearchForm = styled.input`
-  border: 3px solid ${color.lightDarkColor};
-  width: 300px;
-  background-color: ${color.lightColor};
+  border: 3px solid ${color.lightColor};
+  width: 280px;
+  background-color: ${color.accentColor};
   border-radius: 3px;
   margin-top: 10px;
   margin-bottom: 10px;
 `;
 
+export const FormTitle = styled.h3`
+  font-size: 16px;
+  // text-transform: uppercase;
+  @media ${device.desctop} {
+    font-size: 20px;
+  }
+`;
+
 // ==========Music ==========//
-export const Music = styled.div`
+export const Page = styled.div`
   // display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
   text-align: center;
+  @media ${device.tablet} {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 // ==========Music item ==========//
@@ -94,11 +131,21 @@ padding-top: 10px;
 text-align:center;
   width: 250px;
   border: 1px solid ${color.accentColor}}
-
+ @media ${device.mobile} {
+   width: 400px;
+  };
+    @media ${device.tablet} {
+      margin-left:0;
+      margin-right:15px;
+         width: 300px;
+    }
 `;
 export const MusicName = styled.h3`
   font-size: 16px;
   text-transform: uppercase;
+  @media ${device.desctop} {
+    font-size: 20px;
+  }
 `;
 
 export const MediaTypes = styled.div`
@@ -112,11 +159,20 @@ export const MediaButton = styled.button`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: ${color.darkColor};
+  // background-color: ${color.darkColor};
   color: white;
   font-weight: 700;
   letter-spacing: 0.2em;
   font-size: 14px;
+  &: nth-of-type(3n + 1) {
+    background-color: ${color.darkColor};
+  }
+  &: nth-of-type(3n+2) {
+    background-color: ${color.accentColor};
+  }
+  &: nth-of-type(3n+3) {
+    background-color: ${color.semiLightColor};
+  }
 `;
 
 export const MediaList = styled.div`
@@ -145,4 +201,20 @@ export const AudioList = styled.div`
   // height: 50px;
   // border-radius: 50%;
   // background-color: ${color.accentColor};
+`;
+
+// =========Login===========
+
+export const PassForm = styled.input`
+  border: 3px solid ${color.lightDarkColor};
+  width: 180px;
+  background-color: ${color.lightColor};
+  border-radius: 3px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+  @media ${device.mobile} {
+    margin-right: 30px;
+  }
 `;
