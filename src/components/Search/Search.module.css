@@ -1,4 +1,6 @@
 .search:hover,
 .search:focus {
-background-color: red;
+/* background-color: red; */
+/* border:transparent; */
+outline: none;
 }
