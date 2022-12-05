@@ -5,8 +5,16 @@ import {
   PassForm,
   FormTitle,
 } from '../../fonts-colors/styledComponents';
+import { useState } from 'react';
 
 export default function LoginPage() {
+  const [pass, setPass] = useState('');
+
+  const handlePassChange = event => {
+    console.log(event.target.value);
+    setPass(event.target.value);
+  };
+
   return (
     <Page>
       <form
@@ -19,8 +27,8 @@ export default function LoginPage() {
             className={s.input}
             type="password"
             name="password"
-            // value={password}
-            //   onChange={handleChange}
+            value={pass}
+            onChange={handlePassChange}
           />
         </label>
         <MediaButton className={s.button} type="submit">

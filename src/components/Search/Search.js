@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import color from '../../fonts-colors/colors';
 import s from './Search.module.css';
 // import music from '../../music.json';
@@ -10,12 +10,18 @@ import {
 } from '../../fonts-colors/styledComponents';
 
 export default function Search() {
-  const [query, SetQuery] = useState('');
+  const [filter, setFilter] = useState(
+    window.localStorage.getItem('filter' ?? '')
+  );
 
-  function changeFilter(evt) {
+  function handleFilterChange(evt) {
     const value = evt.currentTarget.value;
-    SetQuery(value);
+    setFilter(value);
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('filter', JSON.stringify('filter'));
+  });
 
   return (
     <Page
@@ -32,8 +38,8 @@ export default function Search() {
           type="text"
           className={s.search}
           placeholder="Название..."
-          onChange={changeFilter}
-          filter={query}
+          onChange={handleFilterChange}
+          filter={filter}
         />
         {/* <button type="submit">найти композицию</button> */}
 
