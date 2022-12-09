@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import color from '../../fonts-colors/colors';
 import s from './Search.module.css';
-// import music from '../../music.json';
+import music from '../../music.json';
 
 import {
   SearchForm,
@@ -13,6 +13,21 @@ export default function Search() {
   const [filter, setFilter] = useState(
     window.localStorage.getItem('filter' ?? '')
   );
+  // console.log('filter', filter);
+  // console.log('music', music);
+
+  const filteredMusic = music.filter(musicItem =>
+    musicItem.name.toLowerCase().includes(filter)
+  );
+
+  console.log(filteredMusic);
+  // console.log(
+  //   music.filter(musicItem => musicItem.name.toLowerCase().includes(filter))
+  // );
+
+  // const contactsToShow = data?.filter(({ name }) =>
+  //        name.toLowerCase().includes(filterValue.toLowerCase())
+  //      );
 
   function handleFilterChange(evt) {
     const value = evt.currentTarget.value;
@@ -20,8 +35,19 @@ export default function Search() {
   }
 
   useEffect(() => {
-    window.localStorage.setItem('filter', JSON.stringify('filter'));
-  });
+    window.localStorage.setItem('filter', JSON.stringify(filter));
+  }, [filter]);
+
+  const toShow = () => {
+    if (filteredMusic.length === 0) {
+      return music;
+    } else {
+      return filteredMusic;
+    }
+  };
+
+  // const musicToShow = toShow();
+  // console.log('toShow', musicToShow);
 
   return (
     <Page
@@ -39,7 +65,7 @@ export default function Search() {
           className={s.search}
           placeholder="Название..."
           onChange={handleFilterChange}
-          filter={filter}
+          toShow={toShow}
         />
         {/* <button type="submit">найти композицию</button> */}
 

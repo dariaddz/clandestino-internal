@@ -1,14 +1,14 @@
+// import { Suspense } from 'react';
 import MainPage from './pages/MainPage';
-
 import LoginPage from './pages/LoginPage';
-import Loader from './components/Loader';
+// import Loader from './components/Loader';
 
 import { Container } from './fonts-colors/styledComponents';
 
 function App() {
   return (
     <>
-      <Loader />
+      {/* <Suspense fallback={<Loader />}> */}
       <Container
       // style={{
       //   backgroundImage: 'url(' + img + ')',
@@ -22,6 +22,7 @@ function App() {
         <MainPage />
         <LoginPage />
       </Container>
+      {/* </Suspense> */}
     </>
   );
 }

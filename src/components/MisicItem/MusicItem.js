@@ -11,10 +11,26 @@ import {
 import s from './MusicItem.module.css';
 
 import music from '../../music.json';
-// import filter from '../Search';
+// import toShow from '../Search';
+// import { useEffect } from 'react';
 
-export default function MusicItem(filter) {
-  console.log(filter);
+export default function MusicItem() {
+  //   const musicToShow = () => {
+  //     filteredMusic;
+  //   };
+
+  //   console.log('musicToShow', filteredMusic());
+
+  //   useEffect(() => {
+  //     const { data } = toShow();
+  //     if (!data) {
+  //       return;
+  //     }
+  //     // const { data } = toShow();
+  //     console.log('musicToShow', data);
+  //   }, [data]);
+
+  //   console.log('musicToShow', data);
 
   //    const contactsToShow = data?.filter(({ name }) =>
   //      name.toLowerCase().includes(filterValue.toLowerCase())
