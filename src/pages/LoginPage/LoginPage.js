@@ -11,16 +11,20 @@ export default function LoginPage() {
   const [pass, setPass] = useState('');
 
   const handlePassChange = event => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setPass(event.target.value);
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    //  dispatch(authOperations.logIn({ email, password }));
+
+    setPass('');
   };
 
   return (
     <Page>
-      <form
-        //   onSubmit={handleSubmit}
-        autoComplete="off"
-      >
+      <form onSubmit={handleSubmit} autoComplete="off">
         <FormTitle>Пожалуйста, введите пароль</FormTitle>
         <label className={s.label}>
           <PassForm

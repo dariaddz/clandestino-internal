@@ -1,4 +1,8 @@
 import { MediaButton } from '../../fonts-colors/styledComponents';
 export default function LoadMore() {
-  return <MediaButton>Показать еще</MediaButton>;
+  return (
+    <MediaButton style={{ width: '100px', height: '100px' }}>
+      Показать еще
+    </MediaButton>
+  );
 }
