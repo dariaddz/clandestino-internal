@@ -40,7 +40,7 @@ export default function MusicItem() {
   return (
     <>
       {music.map(musicItem => (
-        <Thumb>
+        <Thumb key={musicItem._id}>
           <MusicName>{musicItem.name}</MusicName>
           <MediaTypes>
             <MediaButton className={s.mediaBtn}>видео</MediaButton>
