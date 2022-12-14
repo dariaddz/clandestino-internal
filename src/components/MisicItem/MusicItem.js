@@ -9,17 +9,24 @@ import {
   MusicName,
 } from '../../fonts-colors/styledComponents';
 import s from './MusicItem.module.css';
+// import { useEffect } from 'react';
+// import { musicSelectors, musicOperations } from '../../redux/music';
 
 import music from '../../music.json';
+// import { fetchMusic } from '../../redux/music/musicOperations';
 // import toShow from '../Search';
-// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 
 export default function MusicItem() {
+  // const dispatch = useDispatch();
+  // const music = useSelector(musicSelectors.getMusic);
+
+  // useEffect(() => dispatch(musicOperations.fetchMusic()), [dispatch]);
+
+  // console.log('music', music);
   //   const musicToShow = () => {
   //     filteredMusic;
   //   };
-
-  //   console.log('musicToShow', filteredMusic());
 
   //   useEffect(() => {
   //     const { data } = toShow();

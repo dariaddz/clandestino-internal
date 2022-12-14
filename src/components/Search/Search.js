@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  // useEffect,
+  useState,
+} from 'react';
 import color from '../../fonts-colors/colors';
 import s from './Search.module.css';
 import music from '../../music.json';
@@ -34,9 +37,9 @@ export default function Search() {
     setFilter(value);
   }
 
-  useEffect(() => {
-    window.localStorage.setItem('filter', JSON.stringify(filter));
-  }, [filter]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('filter', JSON.stringify(filter));
+  // }, [filter]);
 
   const toShow = () => {
     if (filteredMusic.length === 0) {

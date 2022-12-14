@@ -4,11 +4,13 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import MusicPage from "./pages/MusicPage";
 import LoginPage from "./pages/LoginPage";
 import Layout from './components/Layout';
+// import { fetchMusic } from './redux/musicApi';
 // import PrivateRoute from './components/PrivateRoute';
 // import PublicRoute from './components/PublicRoute';
 
 export const App = () => {
- 
+
+  
 //   const dispatch = useDispatch()
 
 //  useEffect(() => {
