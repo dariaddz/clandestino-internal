@@ -9,10 +9,12 @@ import {
   MusicName,
 } from '../../fonts-colors/styledComponents';
 import s from './MusicItem.module.css';
-// import { useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
 // import { musicSelectors, musicOperations } from '../../redux/music';
 
-import music from '../../music.json';
+// import music from '../../music.json';
+import * as musicApi from '../../musicApi';
 // import { fetchMusic } from '../../redux/music/musicOperations';
 // import toShow from '../Search';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -44,11 +46,22 @@ export default function MusicItem() {
   //    );
 
   // query === '': listToShow = music ? listToShow=music.filter.toLowerCase
+
+  const [music, setMusic] = useState(null);
+
+  useEffect(() => {
+    // Axios.get('https://jsonplaceholder.typicode.com/photos')
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.log(err));
+
+    musicApi.fetchMusic().then(setMusic);
+  }, []);
+
   return (
     <>
       {music.map(musicItem => (
-        <Thumb key={musicItem._id}>
-          <MusicName>{musicItem.name}</MusicName>
+        <Thumb key={musicItem.id}>
+          <MusicName>{musicItem.title}</MusicName>
           <MediaTypes>
             <MediaButton className={s.mediaBtn}>видео</MediaButton>
             <MediaButton className={s.mediaBtn}>ноты</MediaButton>

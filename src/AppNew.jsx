@@ -45,31 +45,6 @@ export const App = () => {
                 element={<Navigate to="/" />} /> 
             </>
 
-
-
-            {/* <Route index
-                element={<PublicRoute redirectTo="/music" restricted>
-                  <LoginPage />
-                </PublicRoute>} />
-              
-            {isFetchingCurrentUser ? <Loader/> : 
-            <>
-                <Route
-                path="/music"
-                element={<PrivateRoute redirectTo="/login">
-                    <MusicPage />
-                </PrivateRoute>} />
-                  
-                <Route 
-                path="/login" 
-                element={<PublicRoute redirectTo="/music" restricted>
-                  <LoginPage />
-                </PublicRoute>} />
-                  
-                <Route 
-                path="*" 
-                element={<Navigate to="/" />} /> 
-            </>} */}
             </Route>
           </Routes>
         {/* </Suspense>         */}
