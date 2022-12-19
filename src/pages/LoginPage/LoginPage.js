@@ -5,21 +5,29 @@ import {
   PassForm,
   FormTitle,
 } from '../../fonts-colors/styledComponents';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { logIn } from '../../redux/userSlice';
 
 export default function LoginPage() {
-  const [pass, setPass] = useState('');
+  // const [pass, setPass] = useState('');
 
-  const handlePassChange = event => {
-    // console.log(event.target.value);
-    setPass(event.target.value);
-  };
+  // const handlePassChange = event => {
+  //   // console.log(event.target.value);
+  //   setPass(event.target.value);
+  // };
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    //  dispatch(authOperations.logIn({ email, password }));
-
-    setPass('');
+    const form = evt.currentTarget;
+    dispatch(logIn(form.elements.password.value));
+    form.reset();
+    navigate('/music', { replace: true });
+    //   setPass('');
   };
 
   return (
@@ -31,8 +39,8 @@ export default function LoginPage() {
             className={s.input}
             type="password"
             name="password"
-            value={pass}
-            onChange={handlePassChange}
+            // value={pass}
+            // onChange={handlePassChange}
           />
         </label>
         <MediaButton className={s.button} type="submit">

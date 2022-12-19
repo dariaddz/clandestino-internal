@@ -1,12 +1,20 @@
-// import { Suspense } from "react"
+import {
+  Suspense,
+lazy
+} from "react"
 import { Route, Routes, Navigate } from 'react-router-dom';
 // import  Loader from './components/Loader';
-import MusicPage from "./pages/MusicPage";
-import LoginPage from "./pages/LoginPage";
+// import MusicPage from "./pages/MusicPage";
+// import LoginPage from "./pages/LoginPage";
 import Layout from './components/Layout';
 // import { fetchMusic } from './redux/musicApi';
 // import PrivateRoute from './components/PrivateRoute';
 // import PublicRoute from './components/PublicRoute';
+
+
+const MusicPage = lazy(() => import('./pages/MusicPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+
 
 export const App = () => {
 
@@ -22,15 +30,18 @@ export const App = () => {
   
     return (
       <>
-        {/* <Suspense fallback={<Loader/>}> */}
+        <Suspense fallback={
+          <div>Загружжжжжжаем....</div>
+          // <Loader />
+        }>
           <Routes>
-            <Route exact path="/" element={<Layout />}>
+            <Route  path="/" element={<Layout />}>
 
-  <Route index
-                element={<LoginPage />} path="/"/>
+  {/* <Route index
+                element={<LoginPage />} path="/"/> */}
               
             {/* {isFetchingCurrentUser ? <Loader/> :  */}
-            <>
+          
                 <Route
                     path="/music"
                     element={<MusicPage />}
@@ -43,11 +54,11 @@ export const App = () => {
                 <Route 
                 path="*" 
                 element={<Navigate to="/" />} /> 
-            </>
+            
 
             </Route>
           </Routes>
-        {/* </Suspense>         */}
+        </Suspense>        
       </>
     )
 }

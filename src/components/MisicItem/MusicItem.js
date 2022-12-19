@@ -14,58 +14,71 @@ import { useEffect, useState } from 'react';
 // import { musicSelectors, musicOperations } from '../../redux/music';
 
 // import music from '../../music.json';
-import * as musicApi from '../../musicApi';
+// import * as musicApi from '../../redux/musicApi';
+import { useGetMusicQuery } from '../../redux/musicApi'; //rtk query
+
+// import Axios from 'axios';
 // import { fetchMusic } from '../../redux/music/musicOperations';
 // import toShow from '../Search';
 // import { useDispatch, useSelector } from 'react-redux';
 
 export default function MusicItem() {
-  // const dispatch = useDispatch();
-  // const music = useSelector(musicSelectors.getMusic);
+  //   // const dispatch = useDispatch();
+  //   // const music = useSelector(musicSelectors.getMusic);
 
-  // useEffect(() => dispatch(musicOperations.fetchMusic()), [dispatch]);
+  //   // useEffect(() => dispatch(musicOperations.fetchMusic()), [dispatch]);
 
-  // console.log('music', music);
-  //   const musicToShow = () => {
-  //     filteredMusic;
-  //   };
+  //   // console.log('music', music);
+  //   //   const musicToShow = () => {
+  //   //     filteredMusic;
+  //   //   };
 
-  //   useEffect(() => {
-  //     const { data } = toShow();
-  //     if (!data) {
-  //       return;
-  //     }
-  //     // const { data } = toShow();
-  //     console.log('musicToShow', data);
-  //   }, [data]);
+  //   //   useEffect(() => {
+  //   //     const { data } = toShow();
+  //   //     if (!data) {
+  //   //       return;
+  //   //     }
+  //   //     // const { data } = toShow();
+  //   //     console.log('musicToShow', data);
+  //   //   }, [data]);
 
-  //   console.log('musicToShow', data);
+  //   //   console.log('musicToShow', data);
 
-  //    const contactsToShow = data?.filter(({ name }) =>
-  //      name.toLowerCase().includes(filterValue.toLowerCase())
-  //    );
+  //   //    const contactsToShow = data?.filter(({ name }) =>
+  //   //      name.toLowerCase().includes(filterValue.toLowerCase())
+  //   //    );
 
-  // query === '': listToShow = music ? listToShow=music.filter.toLowerCase
+  //   // query === '': listToShow = music ? listToShow=music.filter.toLowerCase
 
-  const [music, setMusic] = useState(null);
+  const {
+    data,
+    isFetching,
+    //  error
+  } = useGetMusicQuery(); //rtk query
+
+  const [music, setMusic] = useState([]);
 
   useEffect(() => {
-    // Axios.get('https://jsonplaceholder.typicode.com/photos')
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err));
-
-    musicApi.fetchMusic().then(setMusic);
-  }, []);
-
+    // musicApi.fetchMusic().then(setMusic);
+    setMusic(data);
+  }, [data]);
+  console.log('fake music fetch from Api', music);
+  console.log('isFetching', isFetching);
   return (
     <>
-      {music.map(musicItem => (
+      {isFetching && <div>Загружжжжжжаем....</div>}
+      {music?.map(musicItem => (
         <Thumb key={musicItem.id}>
           <MusicName>{musicItem.title}</MusicName>
           <MediaTypes>
-            <MediaButton className={s.mediaBtn}>видео</MediaButton>
-            <MediaButton className={s.mediaBtn}>ноты</MediaButton>
-            <MediaButton className={s.mediaBtn}>аудио</MediaButton>
+            {musicItem.thumbnailUrl && (
+              <MediaButton className={s.mediaBtn}>видео</MediaButton>
+            )}
+            {musicItem.url && (
+              <MediaButton className={s.mediaBtn}>ноты</MediaButton>
+            )}
+
+            {/* <MediaButton className={s.mediaBtn}>аудио</MediaButton> */}
           </MediaTypes>
           <MediaList>
             <VideoList>
