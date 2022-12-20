@@ -10,7 +10,7 @@ import {
 } from '../../fonts-colors/styledComponents';
 import s from './MusicItem.module.css';
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 // import { musicSelectors, musicOperations } from '../../redux/music';
 
 // import music from '../../music.json';
@@ -56,55 +56,60 @@ export default function MusicItem() {
     //  error
   } = useGetMusicQuery(); //rtk query
 
-  const [music, setMusic] = useState([]);
+  // const [music, setMusic] = useState([]);
+  // useEffect(() => {
+  //   // musicApi.fetchMusic().then(setMusic);
+  //   setMusic(data);
+  // }, [data]);
+  console.log('music fetch from Api', data);
 
-  useEffect(() => {
-    // musicApi.fetchMusic().then(setMusic);
-    setMusic(data);
-  }, [data]);
-  console.log('fake music fetch from Api', music);
   console.log('isFetching', isFetching);
   return (
     <>
       {isFetching && <div>Загружжжжжжаем....</div>}
-      {music?.map(musicItem => (
-        <Thumb key={musicItem.id}>
-          <MusicName>{musicItem.title}</MusicName>
-          <MediaTypes>
-            {musicItem.thumbnailUrl && (
-              <MediaButton className={s.mediaBtn}>видео</MediaButton>
-            )}
-            {musicItem.url && (
-              <MediaButton className={s.mediaBtn}>ноты</MediaButton>
-            )}
+      {data?.map(
+        musicItem =>
+          musicItem.archive === false && (
+            <Thumb key={musicItem.id}>
+              <MusicName>{musicItem.musicName}</MusicName>
+              <MediaTypes>
+                {musicItem.video.length > 0 && (
+                  <MediaButton className={s.mediaBtn}>видео</MediaButton>
+                )}
+                {musicItem.notes.length > 0 && (
+                  <MediaButton className={s.mediaBtn}>ноты</MediaButton>
+                )}
 
-            {/* <MediaButton className={s.mediaBtn}>аудио</MediaButton> */}
-          </MediaTypes>
-          <MediaList>
-            <VideoList>
-              <ul>
-                <li>video 1</li>
-                <li>video 2</li>
-                <li>video 3</li>
-              </ul>
-            </VideoList>
-            <NoteList>
-              <ul>
-                <li>notes 1</li>
-                <li>notes 2</li>
-                <li>notes 3</li>
-              </ul>
-            </NoteList>
-            <AudioList>
-              <ul>
-                <li>audio 1</li>
-                <li>audio 2</li>
-                <li>audio 3</li>
-              </ul>
-            </AudioList>
-          </MediaList>
-        </Thumb>
-      ))}
+                {musicItem.audio.length > 0 && (
+                  <MediaButton className={s.mediaBtn}>аудио</MediaButton>
+                )}
+              </MediaTypes>
+              <MediaList>
+                <VideoList>
+                  <ul>
+                    <li>video 1</li>
+                    <li>video 2</li>
+                    <li>video 3</li>
+                  </ul>
+                </VideoList>
+                <NoteList>
+                  <ul>
+                    <li>notes 1</li>
+                    <li>notes 2</li>
+                    <li>notes 3</li>
+                  </ul>
+                </NoteList>
+                <AudioList>
+                  <ul>
+                    <li>audio 1</li>
+                    <li>audio 2</li>
+                    <li>audio 3</li>
+                  </ul>
+                </AudioList>
+              </MediaList>
+            </Thumb>
+          )
+      )}
     </>
   );
 }

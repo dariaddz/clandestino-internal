@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/userSlice';
 
 import color from '../../fonts-colors/colors';
+import { Link } from 'react-router-dom';
 
 export default function HeaderBar() {
   const isLoggedIn = useSelector(state => state.users.isLoggedIn);
@@ -29,6 +30,21 @@ export default function HeaderBar() {
           <H1>Bloco Clandestino</H1>
           <H2>рабочие материалы</H2>
         </div>
+
+        <Link
+          style={{
+            width: '60px',
+            height: '60px',
+            fontSize: '12px',
+            borderRadius: '50%',
+            backgroundColor: `${color.accentColor}`,
+            color: 'white',
+          }}
+          to="/music/upload"
+          // onClick={() => dispatch(logOut())}
+        >
+          Добавить композицию
+        </Link>
 
         {isLoggedIn && (
           <MediaButton

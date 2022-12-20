@@ -14,7 +14,7 @@ import Layout from './components/Layout';
 
 const MusicPage = lazy(() => import('./pages/MusicPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
-
+const UploadPage = lazy(() => import('./pages/UploadPage'));
 
 export const App = () => {
 
@@ -50,6 +50,9 @@ export const App = () => {
                 <Route 
                 path="/login" 
                 element={<LoginPage />} />
+              <Route 
+                path="/music/upload" 
+                element={<UploadPage />} />
                   
                 <Route 
                 path="*" 

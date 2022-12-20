@@ -21,6 +21,7 @@ export default function MusicList() {
       <Page>
         <MusicItem />
       </Page>
+      {/* //isFetching */}
       <LoadMore />
     </Page>
   );
