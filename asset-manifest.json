@@ -1,17 +1,26 @@
 {
   "files": {
-    "main.css": "/clandestino-internal/static/css/main.1e8c2f3b.css",
-    "main.js": "/clandestino-internal/static/js/main.c2da6c01.js",
+    "main.css": "/clandestino-internal/static/css/main.44030c5e.css",
+    "main.js": "/clandestino-internal/static/js/main.d83bf10b.js",
+    "static/css/259.2d1d672b.chunk.css": "/clandestino-internal/static/css/259.2d1d672b.chunk.css",
+    "static/js/259.14ba19cb.chunk.js": "/clandestino-internal/static/js/259.14ba19cb.chunk.js",
+    "static/css/546.31d6cfe0.chunk.css": "/clandestino-internal/static/css/546.31d6cfe0.chunk.css",
+    "static/js/546.15889a46.chunk.js": "/clandestino-internal/static/js/546.15889a46.chunk.js",
+    "static/js/947.2fc871c4.chunk.js": "/clandestino-internal/static/js/947.2fc871c4.chunk.js",
     "static/js/787.d3de9ba7.chunk.js": "/clandestino-internal/static/js/787.d3de9ba7.chunk.js",
     "static/media/Radomir Tinkov - Gilroy-ExtraBold.otf": "/clandestino-internal/static/media/Radomir Tinkov - Gilroy-ExtraBold.f0feeaf3468f1ac2b9cd.otf",
     "static/media/Radomir Tinkov - Gilroy-Light.otf": "/clandestino-internal/static/media/Radomir Tinkov - Gilroy-Light.5ac188463a0bf78b3351.otf",
     "index.html": "/clandestino-internal/index.html",
-    "main.1e8c2f3b.css.map": "/clandestino-internal/static/css/main.1e8c2f3b.css.map",
-    "main.c2da6c01.js.map": "/clandestino-internal/static/js/main.c2da6c01.js.map",
+    "main.44030c5e.css.map": "/clandestino-internal/static/css/main.44030c5e.css.map",
+    "main.d83bf10b.js.map": "/clandestino-internal/static/js/main.d83bf10b.js.map",
+    "259.2d1d672b.chunk.css.map": "/clandestino-internal/static/css/259.2d1d672b.chunk.css.map",
+    "259.14ba19cb.chunk.js.map": "/clandestino-internal/static/js/259.14ba19cb.chunk.js.map",
+    "546.15889a46.chunk.js.map": "/clandestino-internal/static/js/546.15889a46.chunk.js.map",
+    "947.2fc871c4.chunk.js.map": "/clandestino-internal/static/js/947.2fc871c4.chunk.js.map",
     "787.d3de9ba7.chunk.js.map": "/clandestino-internal/static/js/787.d3de9ba7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e8c2f3b.css",
-    "static/js/main.c2da6c01.js"
+    "static/css/main.44030c5e.css",
+    "static/js/main.d83bf10b.js"
   ]
 }
