@@ -43,15 +43,15 @@ export const App = () => {
             {/* {isFetchingCurrentUser ? <Loader/> :  */}
           
                 <Route
-                    path="/music"
+                    path="music"
                     element={<MusicPage />}
                  />
                   
                 <Route 
-                path="/login" 
+                path="login" 
                 element={<LoginPage />} />
-              <Route 
-                path="/music/upload" 
+               <Route 
+                path="music/upload" 
                 element={<UploadPage />} />
                   
                 <Route 
@@ -67,4 +67,85 @@ export const App = () => {
 }
 
 
-export default App;
+// export default App;
+
+// function App() {
+//   //--Eugen
+//   const dispatch = useDispatch();
+//   const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+//   const isCalculated = useSelector(authSelectors.getIsCalculated);
+//   useEffect(() => {
+//     dispatch(authOperations.fetchCurrentUser());
+//   }, [dispatch]);
+//   //--Eugen
+//   return (
+//     <>
+//       {isFetchingCurrentUser ? (
+//         <Spiner />
+//       ) : (
+//         <Suspense fallback={<Spiner />}>
+//           <Routes>
+//             <Route path="/" element={<MainPage />}>
+       
+//               <Route
+//                 index
+//                 element={
+//                   <PublicRoute
+//                     component={<HomePage />}
+//                     restricted
+//                     // redirectTo={'/diary'}
+//                     redirectTo={!isCalculated ? '/calculator' : '/diary'}
+//                     // restricted
+//                   />
+//                 }
+//               />
+
+//               <Route
+//                 path="register"
+//                 element={
+//                   <PublicRoute
+//                     component={<RegistrationPage />}
+//                     redirectTo={'/diary'}
+//                     restricted
+//                   />
+//                 }
+//               />
+       
+
+//               <Route
+//                 path="login"
+//                 element={
+//                   <PublicRoute
+//                     component={<LoginPage />}
+//                     redirectTo={isCalculated ? '/diary' : '/'}
+//                     restricted
+//                   />
+//                 }
+//               />
+//               <Route
+//                 path="diary"
+//                 element={
+//                   <PrivateRoute
+//                     component={<DiaryPage />}
+//                     redirectTo={'/login'}
+//                     restricted
+//                   />
+//                 }
+//               />
+//               <Route
+//                 path="calculator"
+//                 element={
+//                   <PrivateRoute
+//                     component={<CalculatorPage />}
+//                     redirectTo={'/login'}
+//                   />
+//                 }
+//               />
+//               <Route path="*" element={<NotFoundPage />} />
+//             </Route>
+//           </Routes>
+//         </Suspense>
+//       )}
+//     </>
+//   );
+// }
