@@ -10,63 +10,24 @@ import {
 } from '../../fonts-colors/styledComponents';
 import s from './MusicItem.module.css';
 
-// import { useEffect, useState } from 'react';
-// import { musicSelectors, musicOperations } from '../../redux/music';
-
-// import music from '../../music.json';
-// import * as musicApi from '../../redux/musicApi';
 import { useGetMusicQuery } from '../../redux/musicApi'; //rtk query
-
-// import Axios from 'axios';
-// import { fetchMusic } from '../../redux/music/musicOperations';
-// import toShow from '../Search';
-// import { useDispatch, useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 export default function MusicItem() {
-  //   // const dispatch = useDispatch();
-  //   // const music = useSelector(musicSelectors.getMusic);
-
-  //   // useEffect(() => dispatch(musicOperations.fetchMusic()), [dispatch]);
-
-  //   // console.log('music', music);
-  //   //   const musicToShow = () => {
-  //   //     filteredMusic;
-  //   //   };
-
-  //   //   useEffect(() => {
-  //   //     const { data } = toShow();
-  //   //     if (!data) {
-  //   //       return;
-  //   //     }
-  //   //     // const { data } = toShow();
-  //   //     console.log('musicToShow', data);
-  //   //   }, [data]);
-
-  //   //   console.log('musicToShow', data);
-
-  //   //    const contactsToShow = data?.filter(({ name }) =>
-  //   //      name.toLowerCase().includes(filterValue.toLowerCase())
-  //   //    );
-
-  //   // query === '': listToShow = music ? listToShow=music.filter.toLowerCase
-
-  const {
-    data,
-    isFetching,
-    //  error
-  } = useGetMusicQuery(); //rtk query
-
-  // const [music, setMusic] = useState([]);
-  // useEffect(() => {
-  //   // musicApi.fetchMusic().then(setMusic);
-  //   setMusic(data);
-  // }, [data]);
+  const { data, isFetching } = useGetMusicQuery(); //rtk query
+  // const filterValue = useSelector(state => state.value);
   console.log('music fetch from Api', data);
 
+  // const filteredContacts = data?.filter(({ musicName }) =>
+  //   musicName.toLowerCase().includes(filterValue.toLowerCase())
+  // );
+
+  // console.log('music fetch from Api', data);
   console.log('isFetching', isFetching);
+
   return (
     <>
-      {isFetching && <div>Загружжжжжжаем....</div>}
+      {isFetching && !data && <div>Загружжжжжжаем....</div>}
       {data?.map(
         musicItem =>
           musicItem.archive === false && (

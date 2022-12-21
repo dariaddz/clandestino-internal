@@ -1,4 +1,4 @@
-import Search from '../../components/Search';
+import Filter from '../../components/Filter';
 import MusicList from '../../components/MusicList/MusicList';
 
 import { useEffect } from 'react';
@@ -16,7 +16,7 @@ export default function MusicPage() {
   }, [isLoggedIn, navigate]);
   return (
     <>
-      <Search />
+      <Filter />
       <MusicList />
     </>
   );
