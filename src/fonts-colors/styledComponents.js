@@ -54,6 +54,7 @@ export const Header = styled.header`
 
 export const H1 = styled.h1`
   font-size: 16px;
+  color: black;
   @media ${device.mobile} {
     font-size: 18px;
   }
@@ -63,12 +64,17 @@ export const H1 = styled.h1`
   @media ${device.desctop} {
     font-size: 26px;
   }
+  &:hover,
+  &:focus {
+    box-shadow: 0 7px 9px -4px ${color.accentColor};
+  }
 `;
 
 export const H2 = styled.h2`
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 12px;
+  color: black;
   @media ${device.mobile} {
     font-size: 14px;
   }
@@ -86,6 +92,27 @@ export const BurgerButton = styled.button`
   background-color: ${color.accentColor};
   border: 3px solid ${color.lightColor};
   border-radius: 3px;
+`;
+
+export const WellcomeBtn = styled.button`
+  width: 120px;
+  height: 40px;
+  border: 2px solid ${color.accentColor};
+  border-radius: 3px;
+  background: linear-gradient(
+    to bottom right,
+    ${color.accentColor} 20%,
+    ${color.semiLightColor} 20% 50%,
+    ${color.lightColor} 50%
+  );
+  color: black;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  &:hover,
+  &:focus {
+    box-shadow: 0 7px 9px -3px ${color.accentColor};
+  }
 `;
 
 // background-image: 'url(' + img + ')');
@@ -164,6 +191,10 @@ export const MediaButton = styled.button`
   font-weight: 700;
   letter-spacing: 0.2em;
   font-size: 14px;
+  &:hover,
+  &:focus {
+    box-shadow: 0 7px 9px -3px ${color.accentColor};
+  }
   &: nth-of-type(3n + 1) {
     background-color: ${color.darkColor};
   }

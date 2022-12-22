@@ -7,6 +7,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 // import MusicPage from "./pages/MusicPage";
 // import LoginPage from "./pages/LoginPage";
 import Layout from './components/Layout';
+import MainPage from "./pages/WellcomePage/WellcomePage";
 // import { fetchMusic } from './redux/musicApi';
 // import PrivateRoute from './components/PrivateRoute';
 // import PublicRoute from './components/PublicRoute';
@@ -38,7 +39,7 @@ export const App = () => {
             <Route  path="/" element={<Layout />}>
 
   <Route index
-                element={<LoginPage />} path="login"/>
+                element={<MainPage />} path="/"/>
               
             {/* {isFetchingCurrentUser ? <Loader/> :  */}
           

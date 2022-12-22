@@ -26,10 +26,10 @@ export default function HeaderBar() {
       }}
     >
       <Header>
-        <div>
+        <Link to="/">
           <H1>Bloco Clandestino</H1>
           <H2>рабочие материалы</H2>
-        </div>
+        </Link>
 
         <Link
           style={{

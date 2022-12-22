@@ -6,6 +6,7 @@ const Layout = () => {
   return (
     <>
       <HeaderBar />
+
       <Suspense
         fallback={
           <div>Загружжжжжжаем....</div>
