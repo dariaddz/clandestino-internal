@@ -37,8 +37,8 @@ export const App = () => {
           <Routes>
             <Route  path="/" element={<Layout />}>
 
-  {/* <Route index
-                element={<LoginPage />} path="/"/> */}
+  <Route index
+                element={<LoginPage />} path="login"/>
               
             {/* {isFetchingCurrentUser ? <Loader/> :  */}
           
