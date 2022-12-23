@@ -207,7 +207,7 @@ export const MediaButton = styled.button`
 `;
 
 export const MediaList = styled.div`
-  // background-color: red;
+  color: ${color.accentColor};
 `;
 // export const MediaTitle = styled.h4`
 //   color: white;
@@ -217,21 +217,21 @@ export const VideoList = styled.div`
   // width: 50px;
   // height: 50px;
   // border-radius: 50%;
-  // background-color: ${color.darkColor};
+  background-color: ${color.darkColor};
 `;
 
 export const NoteList = styled.div`
   // width: 50px;
   // height: 50px;
   // border-radius: 50%;
-  // background-color: ${color.lightDarkColor};
+  background-color: ${color.lightDarkColor};
 `;
 
 export const AudioList = styled.div`
   // width: 50px;
   // height: 50px;
   // border-radius: 50%;
-  // background-color: ${color.accentColor};
+  background-color: ${color.accentColor};
 `;
 
 // =========Login===========
