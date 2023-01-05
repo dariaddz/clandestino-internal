@@ -29,6 +29,11 @@ h6 {
   padding: 0;
 }
 
+ol li {
+    list-style: decimal;
+    /* list-style-position: inside; */
+}
+
 li {
   list-style: none;
   padding: 0;

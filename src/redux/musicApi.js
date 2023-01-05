@@ -26,6 +26,14 @@ export const musicApi = createApi({
       providesTags: ['Music'],
     }),
 
+    getMusicById: builder.query({
+      query: id => ({
+        url: `/musics/${id}`,
+        method: 'GET',
+      }),
+      providesTags: ['Music'],
+    }),
+
     addMusic: builder.mutation({
       query: ({ musicName }) => ({
         url: `/musics`,
@@ -48,6 +56,7 @@ export const musicApi = createApi({
 
 export const {
   useGetMusicQuery,
+  useGetMusicByIdQuery,
   useAddMusicMutation,
   useArchiveMusicMutation,
 } = musicApi;

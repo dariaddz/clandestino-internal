@@ -1,4 +1,5 @@
 import s from '../LoginPage/LoginPage.module.css';
+import color from '../../fonts-colors/colors';
 import {
   MediaButton,
   Page,
@@ -43,7 +44,13 @@ export default function LoginPage() {
             // onChange={handlePassChange}
           />
         </label>
-        <MediaButton className={s.button} type="submit">
+        <MediaButton
+          style={{
+            backgroundColor: `${color.accentColor}`,
+            cursor: 'pointer',
+          }}
+          type="submit"
+        >
           Войти
         </MediaButton>
       </form>

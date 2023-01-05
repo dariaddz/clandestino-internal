@@ -20,9 +20,7 @@ export default function HeaderBar() {
     <div
       style={{
         backgroundColor: `${color.lightDarkColor}`,
-        paddingTop: '10px',
-        paddingLeft: '10px',
-        paddingRight: '10px',
+        padding: '10px',
       }}
     >
       <Header>
@@ -31,27 +29,35 @@ export default function HeaderBar() {
           <H2>рабочие материалы</H2>
         </Link>
 
-        <Link
+        {/* ========кнопка Добавить композицию ============= */}
+        {/* <Link
           style={{
-            width: '60px',
-            height: '60px',
-            fontSize: '12px',
+            width: '50px',
+            height: '50px',
+            fontSize: '8px',
             borderRadius: '50%',
+            color: 'black',
+            fontWeight: '700',
+            letterSpacing: '0.2em',
             backgroundColor: `${color.accentColor}`,
-            color: 'white',
+            display: 'flex',
+            alignContent: 'center',
+            flexWrap: 'wrap',
           }}
+          
           to="/music/upload"
-          // onClick={() => dispatch(logOut())}
-        >
-          Добавить композицию
-        </Link>
+               >
+          Добавить
+        </Link> */}
 
         {isLoggedIn && (
           <MediaButton
             style={{
-              width: '40px',
-              height: '40px',
+              width: '50px',
+              height: '50px',
               fontSize: '8px',
+              marginRight: '0px',
+              cursor: 'pointer',
             }}
             type="button"
             onClick={() => dispatch(logOut())}
