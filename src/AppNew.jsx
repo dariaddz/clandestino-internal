@@ -3,11 +3,11 @@ import {
 lazy
 } from "react"
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import  Loader from './components/Loader';
-// import MusicPage from "./pages/MusicPage";
-// import LoginPage from "./pages/LoginPage";
+
 import Layout from './components/Layout';
 import MainPage from "./pages/WellcomePage/WellcomePage";
+
+
 // import { fetchMusic } from './redux/musicApi';
 // import PrivateRoute from './components/PrivateRoute';
 // import PublicRoute from './components/PublicRoute';
@@ -16,6 +16,7 @@ import MainPage from "./pages/WellcomePage/WellcomePage";
 const MusicPage = lazy(() => import('./pages/MusicPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const UploadPage = lazy(() => import('./pages/UploadPage'));
+const ProgramPage = lazy(() => import('./pages/ProgramPage'));
 
 export const App = () => {
 
@@ -46,8 +47,13 @@ export const App = () => {
                 <Route
                     path="music"
                     element={<MusicPage />}
-                 />
-                  
+              />
+                <Route 
+                path="program" 
+                element={<ProgramPage />}
+              
+              />
+              
                 <Route 
                 path="login" 
                 element={<LoginPage />} />
@@ -59,7 +65,6 @@ export const App = () => {
                 path="*" 
                 element={<Navigate to="/" />} /> 
             
-
             </Route>
           </Routes>
         </Suspense>        

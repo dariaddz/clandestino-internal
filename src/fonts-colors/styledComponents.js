@@ -73,7 +73,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 8px;
   color: black;
   @media ${device.mobile} {
     font-size: 14px;

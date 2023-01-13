@@ -1,11 +1,23 @@
-import music from '../../music.json';
+import { Link } from 'react-router-dom';
+import { H2 } from '../../fonts-colors/styledComponents';
 
 export default function Navigation() {
   return (
-    <ul>
-      {music.map(musicItem => (
-        <li key={musicItem._id}>{musicItem.name}</li>
-      ))}
-    </ul>
+    <div
+      styled={{
+        width: '80px',
+        display: 'block',
+        marginTop: 'auto',
+        maarginBottom: 'auto',
+      }}
+    >
+      <Link to="/music">
+        <H2>Наши композиции</H2>
+      </Link>
+      <Link to="/program">
+        {' '}
+        <H2>Наши программы</H2>
+      </Link>
+    </div>
   );
 }

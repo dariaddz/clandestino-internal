@@ -2,6 +2,7 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeFilter } from '../../redux/filterSlice';
 import color from '../../fonts-colors/colors';
+import { Link } from 'react-router-dom';
 // import s from './Filter.module.css';
 
 import {
@@ -22,7 +23,8 @@ export default function Filter() {
         paddingRight: '10px',
       }}
     >
-      <FormTitle>Наши композиции</FormTitle>
+      {/* <Link to="/music">Наши композиции</Link>
+      <Link to="/program">Наши программы</Link> */}
     </Page>
   );
 }

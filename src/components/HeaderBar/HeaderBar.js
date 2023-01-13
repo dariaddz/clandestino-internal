@@ -11,6 +11,7 @@ import { logOut } from '../../redux/userSlice';
 
 import color from '../../fonts-colors/colors';
 import { Link } from 'react-router-dom';
+import Navigation from '../../components/Navigation';
 
 export default function HeaderBar() {
   const isLoggedIn = useSelector(state => state.users.isLoggedIn);
@@ -29,8 +30,35 @@ export default function HeaderBar() {
           <H2>рабочие материалы</H2>
         </Link>
 
-        {/* ========кнопка Добавить композицию ============= */}
-        {/* <Link
+        {isLoggedIn && (
+          <>
+            <Navigation />
+
+            <MediaButton
+              style={{
+                width: '50px',
+                height: '50px',
+                fontSize: '8px',
+                marginRight: '0px',
+                cursor: 'pointer',
+              }}
+              type="button"
+              onClick={() => dispatch(logOut())}
+            >
+              Выйти
+            </MediaButton>
+          </>
+        )}
+      </Header>
+    </div>
+  );
+}
+
+{
+  /* ========кнопка Добавить композицию ============= */
+}
+{
+  /* <Link
           style={{
             width: '50px',
             height: '50px',
@@ -48,39 +76,5 @@ export default function HeaderBar() {
           to="/music/upload"
                >
           Добавить
-        </Link> */}
-
-        {isLoggedIn && (
-          <MediaButton
-            style={{
-              width: '50px',
-              height: '50px',
-              fontSize: '8px',
-              marginRight: '0px',
-              cursor: 'pointer',
-            }}
-            type="button"
-            onClick={() => dispatch(logOut())}
-          >
-            Выйти
-          </MediaButton>
-        )}
-        {/* <BurgerButton
-        class="menu-toggle js-open-menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        >
-          <svg
-                style={{
-                width: '24px',
-                height: '24px',
-                fill: 'black',
-                }}
-            >
-                <use width="24" height="24" href={menuIcon}></use>
-            </svg>
-        </BurgerButton> */}
-      </Header>
-    </div>
-  );
+        </Link> */
 }
