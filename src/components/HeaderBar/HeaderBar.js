@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '../../redux/userSlice';
 
 import color from '../../fonts-colors/colors';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Navigation from '../../components/Navigation';
 
 export default function HeaderBar() {
@@ -25,10 +25,15 @@ export default function HeaderBar() {
       }}
     >
       <Header>
-        <Link to="/">
+        <NavLink
+          to="/"
+          style={{
+            display: 'block',
+          }}
+        >
           <H1>Bloco Clandestino</H1>
           <H2>рабочие материалы</H2>
-        </Link>
+        </NavLink>
 
         {isLoggedIn && (
           <>
@@ -54,27 +59,23 @@ export default function HeaderBar() {
   );
 }
 
-{
-  /* ========кнопка Добавить композицию ============= */
-}
-{
-  /* <Link
-          style={{
-            width: '50px',
-            height: '50px',
-            fontSize: '8px',
-            borderRadius: '50%',
-            color: 'black',
-            fontWeight: '700',
-            letterSpacing: '0.2em',
-            backgroundColor: `${color.accentColor}`,
-            display: 'flex',
-            alignContent: 'center',
-            flexWrap: 'wrap',
-          }}
-          
-          to="/music/upload"
-               >
-          Добавить
-        </Link> */
-}
+//  ========кнопка Добавить композицию =============
+// <Link
+//           style={{
+//             width: '50px',
+//             height: '50px',
+//             fontSize: '8px',
+//             borderRadius: '50%',
+//             color: 'black',
+//             fontWeight: '700',
+//             letterSpacing: '0.2em',
+//             backgroundColor: `${color.accentColor}`,
+//             display: 'flex',
+//             alignContent: 'center',
+//             flexWrap: 'wrap',
+//           }}
+
+//           to="/music/upload"
+//                >
+//           Добавить
+//         </Link>
