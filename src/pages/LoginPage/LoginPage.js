@@ -1,4 +1,3 @@
-import s from '../LoginPage/LoginPage.module.css';
 import color from '../../fonts-colors/colors';
 import {
   MediaButton,
@@ -35,9 +34,8 @@ export default function LoginPage() {
     <Page>
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormTitle>Пожалуйста, введите пароль</FormTitle>
-        <label className={s.label}>
+        <label>
           <PassForm
-            className={s.input}
             type="password"
             name="password"
             // value={pass}

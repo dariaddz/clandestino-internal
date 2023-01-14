@@ -53,10 +53,10 @@ export const Header = styled.header`
 `;
 
 export const H1 = styled.h1`
-  font-size: 16px;
+  font-size: 14px;
   color: black;
   @media ${device.mobile} {
-    font-size: 18px;
+    font-size: 16px;
   }
   @media ${device.tablet} {
     font-size: 20px;
@@ -83,6 +83,30 @@ export const H2 = styled.h2`
   }
   @media ${device.desctop} {
     font-size: 20px;
+  }
+
+  &:active {
+    color: red;
+  }
+`;
+
+export const NavigationDiv = styled.div`
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @media ${device.mobile} {
+    font-size: 14px;
+  }
+  @media ${device.tablet} {
+    font-size: 16px;
+  }
+  @media ${device.desctop} {
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
   }
 `;
 

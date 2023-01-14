@@ -29,6 +29,9 @@ export default function HeaderBar() {
           to="/"
           style={{
             display: 'block',
+
+            marginTop: 'auto',
+            marginBottom: 'auto',
           }}
         >
           <H1>Bloco Clandestino</H1>

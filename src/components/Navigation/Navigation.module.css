@@ -1,0 +1,39 @@
+.inactive{
+        font-size: 10px;
+        color: black;
+        font-weight:700;
+}
+
+.active{
+          font-size: 10px;
+     color: white;
+     font-weight:700;
+     }
+
+
+    @media (min-width: 425px) {
+      .active {
+         font-size: 14px;
+      }
+         .inactive {
+         font-size: 14px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .active {
+         font-size: 16px;
+      }
+         .inactive {
+         font-size: 16px;
+      }
+    }
+
+        @media (min-width: 1020px) {
+      .active {
+         font-size: 18px;
+      }
+         .inactive {
+         font-size: 18px;
+      }
+    }
