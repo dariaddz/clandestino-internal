@@ -14,13 +14,15 @@ export const musicApi = createApi({
   reducerPath: 'musicApi',
   baseQuery: fetchBaseQuery({
     // baseUrl: 'https://jsonplaceholder.typicode.com/',
-    baseUrl: 'https://63a1848be3113e5a5c57ea31.mockapi.io/',
+    // baseUrl: 'https://63a1848be3113e5a5c57ea31.mockapi.io/',
+    baseUrl: 'http://localhost:8090/api/music/',
+    // baseUrl: 'https://clandestino-internal-back.onrender.com/api/music',
   }),
   tagTypes: ['Music'],
   endpoints: builder => ({
     getMusic: builder.query({
       query: () => ({
-        url: `/musics`,
+        url: `/`,
         method: 'GET',
       }),
       providesTags: ['Music'],
@@ -28,35 +30,35 @@ export const musicApi = createApi({
 
     getMusicById: builder.query({
       query: id => ({
-        url: `/musics/${id}`,
+        url: `/${id}`,
         method: 'GET',
       }),
       providesTags: ['Music'],
     }),
 
-    addMusic: builder.mutation({
-      query: ({ musicName }) => ({
-        url: `/musics`,
-        method: 'POST',
-        body: { musicName: musicName },
-      }),
-      invalidatesTags: ['Music'],
-    }),
+    // addMusic: builder.mutation({
+    //   query: ({ musicName }) => ({
+    //     url: `/musics`,
+    //     method: 'POST',
+    //     body: { musicName: musicName },
+    //   }),
+    //   invalidatesTags: ['Music'],
+    // }),
 
-    archiveMusic: builder.mutation({
-      query: ({ id, ...patch }) => ({
-        url: `/musics/${id}`,
-        method: 'PATCH',
-        body: patch,
-      }),
-      invalidatesTags: ['Music'],
-    }),
+    // archiveMusic: builder.mutation({
+    //   query: ({ id, ...patch }) => ({
+    //     url: `/musics/${id}`,
+    //     method: 'PATCH',
+    //     body: patch,
+    //   }),
+    //   invalidatesTags: ['Music'],
+    // }),
   }),
 });
 
 export const {
   useGetMusicQuery,
   useGetMusicByIdQuery,
-  useAddMusicMutation,
-  useArchiveMusicMutation,
+  // useAddMusicMutation,
+  // useArchiveMusicMutation,
 } = musicApi;

@@ -12,20 +12,22 @@ export default function MusicItem() {
   return (
     <>
       {isFetching && !data && <div>Загружжжжжжаем....</div>}
-      {data?.map(
+
+      {data?.music.map(
         musicItem =>
           musicItem.archive === false && (
             <Thumb
-              key={musicItem.id}
+              key={musicItem._id}
               onClick={() => {
                 setIsOpen(true);
-                setMusicId(musicItem.id);
+                setMusicId(musicItem._id);
               }}
             >
               <MusicName>{musicItem.musicName}</MusicName>
             </Thumb>
           )
       )}
+
       <Modal
         id={musicId}
         open={isOpen}

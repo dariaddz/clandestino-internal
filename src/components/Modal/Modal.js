@@ -40,16 +40,17 @@ export default function Modal({ id, open, onClose }) {
   };
 
   function renderList(item) {
+    console.log(item);
     return (
       <LinkListItem key={item}>
         <a
           style={{ color: 'black' }}
-          href={item}
+          href={`${item}`}
           target="_blank"
           rel="noreferrer"
         >
-          {/* {item} */}
-          https://disk.yandex.ru/d/vCJBlMLhTXGIzA
+          {item}
+          {/* https://disk.yandex.ru/d/vCJBlMLhTXGIzA */}
         </a>
       </LinkListItem>
     );
@@ -65,30 +66,36 @@ export default function Modal({ id, open, onClose }) {
           <>
             <MusicName>{data.musicName}</MusicName>
             <MediaListDiv>
-              {data.video.length > 0 && (
+              {data?.musicItem.video.length > 0 && (
                 <VideoList>
                   <MediaButton>видео</MediaButton>
 
                   <MediaListUl>
-                    {data.video.map(videoItem => renderList(videoItem))}
+                    {data?.musicItem.video.map(videoItem =>
+                      renderList(videoItem)
+                    )}
                   </MediaListUl>
                 </VideoList>
               )}
 
-              {data.notes.length > 0 && (
+              {data?.musicItem.notes.length > 0 && (
                 <NoteList>
                   <MediaButton>ноты</MediaButton>
 
                   <MediaListUl>
-                    {data.notes.map(notesItem => renderList(notesItem))}
+                    {data?.musicItem.notes.map(notesItem =>
+                      renderList(notesItem)
+                    )}
                   </MediaListUl>
                 </NoteList>
               )}
-              {data.audio.length > 0 && (
+              {data?.musicItem.audio.length > 0 && (
                 <AudioList>
                   <MediaButton>аудио</MediaButton>
                   <MediaListUl>
-                    {data.audio.map(audioItem => renderList(audioItem))}
+                    {data?.musicItem.audio.map(audioItem =>
+                      renderList(audioItem)
+                    )}
                   </MediaListUl>
                 </AudioList>
               )}
