@@ -11,10 +11,13 @@ import { logOut } from '../../redux/userSlice';
 
 import color from '../../fonts-colors/colors';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import Navigation from '../../components/Navigation';
 
 export default function HeaderBar() {
-  const isLoggedIn = useSelector(state => state.users.isLoggedIn);
+  const { isLoggedIn, user } = useAuth();
+
+  // ????
   const dispatch = useDispatch();
 
   return (
@@ -41,7 +44,7 @@ export default function HeaderBar() {
         {isLoggedIn && (
           <>
             <Navigation />
-
+            <p>привет, {user}</p>
             <MediaButton
               style={{
                 width: '50px',

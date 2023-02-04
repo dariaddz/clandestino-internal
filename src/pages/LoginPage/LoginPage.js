@@ -8,7 +8,7 @@ import {
 // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { logIn } from '../../redux/userSlice';
+import { logIn } from '../../redux/auth/operations';
 
 export default function LoginPage() {
   // const [pass, setPass] = useState('');
@@ -24,7 +24,14 @@ export default function LoginPage() {
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    dispatch(logIn(form.elements.password.value));
+    dispatch(
+      logIn({
+        userName: form.elements.userName.value,
+        password: form.elements.password.value,
+      })
+    );
+    console.log('form.elements.password.value', form.elements.password.value);
+    console.log('form.elements.userName.value', form.elements.userName.value);
     form.reset();
     navigate('/music', { replace: true });
     //   setPass('');
@@ -35,6 +42,13 @@ export default function LoginPage() {
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormTitle>Пожалуйста, введите пароль</FormTitle>
         <label>
+          <select required="required" name="userName">
+            <option>Музыкант</option>
+            <option>Дирижёр</option>
+          </select>
+        </label>
+
+        <label>
           <PassForm
             type="password"
             name="password"
@@ -42,6 +56,7 @@ export default function LoginPage() {
             // onChange={handlePassChange}
           />
         </label>
+
         <MediaButton
           style={{
             backgroundColor: `${color.accentColor}`,

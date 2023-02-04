@@ -28,13 +28,13 @@ export const musicApi = createApi({
       providesTags: ['Music'],
     }),
 
-    getMusicById: builder.query({
-      query: id => ({
-        url: `/${id}`,
-        method: 'GET',
-      }),
-      providesTags: ['Music'],
-    }),
+    // getMusicById: builder.query({
+    //   query: id => ({
+    //     url: `/${id}`,
+    //     method: 'GET',
+    //   }),
+    //   providesTags: ['Music'],
+    // }),
 
     // addMusic: builder.mutation({
     //   query: ({ musicName }) => ({

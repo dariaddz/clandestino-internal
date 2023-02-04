@@ -4,11 +4,12 @@ import Filter from '../../components/Filter';
 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProgramPage() {
   const navigate = useNavigate();
-  const isLoggedIn = useSelector(state => state.users.isLoggedIn);
+  const { isLoggedIn } = useAuth();
 
   useEffect(() => {
     if (!isLoggedIn) {

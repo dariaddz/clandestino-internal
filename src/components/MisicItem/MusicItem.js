@@ -28,13 +28,13 @@ export default function MusicItem() {
           )
       )}
 
-      <Modal
+      {/* <Modal
         id={musicId}
         open={isOpen}
         onClose={() => {
           setIsOpen(false);
         }}
-      />
+      /> */}
     </>
   );
 }
