@@ -6,8 +6,11 @@ import {
   MediaButton,
 } from '../../fonts-colors/styledComponents';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { logOut } from '../../redux/userSlice';
+import {
+  // useSelector,
+  useDispatch,
+} from 'react-redux';
+import { logOut } from '../../redux/auth/operations';
 
 import color from '../../fonts-colors/colors';
 import { NavLink } from 'react-router-dom';
@@ -16,10 +19,11 @@ import Navigation from '../../components/Navigation';
 
 export default function HeaderBar() {
   const { isLoggedIn, user } = useAuth();
+  console.log('user', user);
 
   // ????
   const dispatch = useDispatch();
-
+  const handleLogout = () => dispatch(logOut());
   return (
     <div
       style={{
@@ -41,6 +45,7 @@ export default function HeaderBar() {
           <H2>рабочие материалы</H2>
         </NavLink>
 
+        {/* {isFetching && !user && <div>Загружжжжжжаем....</div>} */}
         {isLoggedIn && (
           <>
             <Navigation />
@@ -54,7 +59,7 @@ export default function HeaderBar() {
                 cursor: 'pointer',
               }}
               type="button"
-              onClick={() => dispatch(logOut())}
+              onClick={handleLogout}
             >
               Выйти
             </MediaButton>

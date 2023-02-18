@@ -30,8 +30,7 @@ export default function LoginPage() {
         password: form.elements.password.value,
       })
     );
-    console.log('form.elements.password.value', form.elements.password.value);
-    console.log('form.elements.userName.value', form.elements.userName.value);
+
     form.reset();
     navigate('/music', { replace: true });
     //   setPass('');

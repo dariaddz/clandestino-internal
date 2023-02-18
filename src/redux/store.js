@@ -32,7 +32,6 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    // users: userSlice.reducer,
     [musicApi.reducerPath]: musicApi.reducer,
   },
   middleware,
