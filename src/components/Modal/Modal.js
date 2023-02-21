@@ -19,8 +19,8 @@ const portal = document.querySelector('#portal');
 export default function Modal({ id, open, onClose }) {
   const { data, isFetching } = useGetMusicByIdQuery(id); //rtk query
 
-  console.log('data', data);
-  console.log('isFetching', isFetching);
+  console.log('id ', id);
+  console.log('data в модалке', data);
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -65,7 +65,7 @@ export default function Modal({ id, open, onClose }) {
         {data && !isFetching && (
           <>
             <MusicName>{data.musicName}</MusicName>
-            <MediaListDiv>
+            {/* <MediaListDiv>
               {data?.musicItem.video.length > 0 && (
                 <VideoList>
                   <MediaButton>видео</MediaButton>
@@ -99,7 +99,7 @@ export default function Modal({ id, open, onClose }) {
                   </MediaListUl>
                 </AudioList>
               )}
-            </MediaListDiv>
+            </MediaListDiv> */}
             <CloseBtn onClick={onClose}> X</CloseBtn>
           </>
         )}

@@ -1,6 +1,7 @@
 import { Thumb, MusicName } from '../../fonts-colors/styledComponents';
 // import s from './MusicItem.module.css';
 import Modal from '../../components/Modal';
+import Loader from '../Loader';
 import { useGetMusicQuery } from '../../redux/musicApi'; //rtk query
 import { useState } from 'react';
 
@@ -9,9 +10,10 @@ export default function MusicItem() {
   const [isOpen, setIsOpen] = useState(false);
   const [musicId, setMusicId] = useState();
 
+  console.log('musicId в начале', musicId);
   return (
     <>
-      {isFetching && !data && <div>Загружжжжжжаем....</div>}
+      {isFetching && !data && <Loader />}
 
       {data?.music.map(
         musicItem =>
@@ -21,6 +23,7 @@ export default function MusicItem() {
               onClick={() => {
                 setIsOpen(true);
                 setMusicId(musicItem._id);
+                console.log(musicId);
               }}
             >
               <MusicName>{musicItem.musicName}</MusicName>
@@ -28,13 +31,13 @@ export default function MusicItem() {
           )
       )}
 
-      {/* <Modal
+      <Modal
         id={musicId}
         open={isOpen}
         onClose={() => {
           setIsOpen(false);
         }}
-      /> */}
+      />
     </>
   );
 }

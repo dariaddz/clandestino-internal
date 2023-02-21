@@ -1,4 +1,5 @@
 import HeaderBar from '../components/HeaderBar';
+import Loader from './Loader/Loader';
 import { Outlet } from 'react-router-dom';
 
 import { Suspense } from 'react';
@@ -9,8 +10,8 @@ const Layout = () => {
 
       <Suspense
         fallback={
-          <div>Загружжжжжжаем....</div>
-          // <Loader />
+          // <div>Загружжжжжжаем....</div>
+          <Loader />
         }
       >
         <Outlet />

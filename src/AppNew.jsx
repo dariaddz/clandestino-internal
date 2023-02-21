@@ -5,17 +5,17 @@ lazy
 import { useDispatch } from "react-redux";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import {fetchCurrentUser} from './redux/auth/operations'
+import { useAuth } from "./hooks/useAuth";
 
 import Layout from './components/Layout';
 import MainPage from "./pages/WellcomePage/WellcomePage";
-import { useAuth } from "./hooks/useAuth";
+import Loader from "./components/Loader/Loader";
+
 
 import { RestrictedRoute } from "./components/routs/RestrictedRoute";
 import { PrivateRoute } from "./components/routs/PrivateRoute";
 
-// import { fetchMusic } from './redux/musicApi';
-// import PrivateRoute from './components/PrivateRoute';
-// import PublicRoute from './components/PublicRoute';
+
 
 
 const MusicPage = lazy(() => import('./pages/MusicPage'));
@@ -38,9 +38,9 @@ export const App = () => {
   
     return (
       <>
-        {isFetchingCurrentUser ? <div>Загружжжжжжаем....</div> : (
+        {isFetchingCurrentUser ? <Loader /> : (
           <Suspense fallback={
-          <div>Загружжжжжжаем....</div>
+          <Loader />
           // <Loader />
         }>
 
@@ -51,6 +51,10 @@ export const App = () => {
   <Route index
                 element={<MainPage />} path="/"/>
               
+                
+                 <Route 
+                path="login" 
+                  element={<RestrictedRoute component = {LoginPage} redirectTo='/music'/>} />
             {/* {isFetchingCurrentUser ? <Loader/> :  */}
           
                 <Route
@@ -60,16 +64,18 @@ export const App = () => {
               />
                 <Route 
                 path="program" 
-                element={<ProgramPage />}
+                element={<PrivateRoute component = {ProgramPage} redirectTo='/login'/>
+                    }
+              
               
               />
-              
-                <Route 
-                path="login" 
-                  element={<RestrictedRoute component = {LoginPage} redirectTo='/music'/>} />
-               <Route 
-                path="music/upload" 
-                element={<UploadPage />} />
+                 <Route 
+                  path="music/upload"
+                  element={<PrivateRoute component={UploadPage} redirectTo='/login' />}
+                  
+                />
+               
+            
                   
                 <Route 
                 path="*" 

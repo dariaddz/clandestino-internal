@@ -6,8 +6,8 @@ export default function Loader() {
     <div>
       <ColorRing
         //   visible={true}
-        //   height="120"
-        //   width="120"
+        height="120"
+        width="120"
         //   radius="11"
         //   colors={[
         //     `${color.accentColor}`,
