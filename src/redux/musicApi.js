@@ -1,22 +1,11 @@
-// import Axios from 'axios';
-
-// Axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/';
-
-// export async function fetchMusic() {
-//   const response = await Axios.get(`/photos`);
-//   return response.data;
-// }
-
 //rtk query
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const musicApi = createApi({
   reducerPath: 'musicApi',
   baseQuery: fetchBaseQuery({
-    // baseUrl: 'https://jsonplaceholder.typicode.com/',
-    // baseUrl: 'https://63a1848be3113e5a5c57ea31.mockapi.io/',
-    baseUrl: 'http://localhost:8090/api/music/',
-    // baseUrl: 'https://clandestino-internal-back.onrender.com/api/music',
+    // baseUrl: 'http://localhost:8090/api/music/',
+    baseUrl: 'https://clandestino-internal-back.onrender.com/api/music',
   }),
   tagTypes: ['Music'],
   endpoints: builder => ({
@@ -28,13 +17,13 @@ export const musicApi = createApi({
       providesTags: ['Music'],
     }),
 
-    // getMusicById: builder.query({
-    //   query: id => ({
-    //     url: `/${id}`,
-    //     method: 'GET',
-    //   }),
-    //   providesTags: ['Music'],
-    // }),
+    getMusicById: builder.query({
+      query: id => ({
+        url: `/${id}`,
+        method: 'GET',
+      }),
+      providesTags: ['Music'],
+    }),
 
     // addMusic: builder.mutation({
     //   query: ({ musicName }) => ({

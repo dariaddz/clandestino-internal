@@ -9,6 +9,8 @@ import {
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../redux/auth/operations';
+import { useAuth } from '../../hooks/useAuth';
+import Loader from '../../components/Loader';
 
 export default function LoginPage() {
   // const [pass, setPass] = useState('');
@@ -20,6 +22,7 @@ export default function LoginPage() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isPending } = useAuth();
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -31,6 +34,10 @@ export default function LoginPage() {
       })
     );
 
+    if (isPending) {
+      return <Loader />;
+    }
+
     form.reset();
     navigate('/music', { replace: true });
     //   setPass('');
@@ -38,6 +45,7 @@ export default function LoginPage() {
 
   return (
     <Page>
+      {isPending && <Loader />}
       <form onSubmit={handleSubmit} autoComplete="off">
         <FormTitle>Пожалуйста, введите пароль</FormTitle>
         <label>

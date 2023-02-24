@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// axios.defaults.baseURL =
-//   'https://clandestino-internal-back.onrender.com/api/auth/';
-axios.defaults.baseURL = 'http://localhost:8090/api/auth/';
+axios.defaults.baseURL =
+  'https://clandestino-internal-back.onrender.com/api/auth/';
+// axios.defaults.baseURL = 'http://localhost:8090/api/auth/';
 
 // //   add JWT
 // const setAuthHeader = token => {
@@ -30,8 +30,11 @@ export const logIn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('login', credentials);
-      token.set(res.data.token);
-      console.log('res.data  login', res.data);
+      console.log('data while login', res.data.user);
+      console.log('token while login', res.data.user.token);
+
+      token.set(res.data.user.token);
+
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -73,7 +76,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.get('logout');
     token.unset();
-    // console.log();
+    console.log();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

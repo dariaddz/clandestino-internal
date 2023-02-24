@@ -4,6 +4,8 @@ import {
   H1,
   H2,
   MediaButton,
+  Greeting,
+  AuthDiv,
 } from '../../fonts-colors/styledComponents';
 
 import {
@@ -16,9 +18,10 @@ import color from '../../fonts-colors/colors';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import Navigation from '../../components/Navigation';
+import Loader from '../Loader';
 
 export default function HeaderBar() {
-  const { isLoggedIn, user } = useAuth();
+  const { isLoggedIn, user, isFetchingCurrentUser } = useAuth();
   console.log('user', user);
 
   // ????
@@ -45,24 +48,31 @@ export default function HeaderBar() {
           <H2>рабочие материалы</H2>
         </NavLink>
 
-        {/* {isFetching && !user && <div>Загружжжжжжаем....</div>} */}
+        {isFetchingCurrentUser && !user && <Loader />}
         {isLoggedIn && (
           <>
             <Navigation />
-            <p>привет, {user}</p>
-            <MediaButton
-              style={{
-                width: '50px',
-                height: '50px',
-                fontSize: '8px',
-                marginRight: '0px',
-                cursor: 'pointer',
-              }}
-              type="button"
-              onClick={handleLogout}
-            >
-              Выйти
-            </MediaButton>
+            <AuthDiv>
+              <Greeting>
+                привет, <br />
+                {user}
+              </Greeting>
+              <MediaButton
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  fontSize: '8px',
+                  marginRight: '0px',
+                  cursor: 'pointer',
+                  marginTop: 'auto',
+                  marginBottom: 'auto',
+                }}
+                type="button"
+                onClick={handleLogout}
+              >
+                Выйти
+              </MediaButton>
+            </AuthDiv>
           </>
         )}
       </Header>
