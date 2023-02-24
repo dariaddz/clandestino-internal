@@ -4,6 +4,8 @@ import {
   H1,
   H2,
   MediaButton,
+  Greeting,
+  AuthDiv,
 } from '../../fonts-colors/styledComponents';
 
 import {
@@ -50,20 +52,27 @@ export default function HeaderBar() {
         {isLoggedIn && (
           <>
             <Navigation />
-            <p>привет, {user}</p>
-            <MediaButton
-              style={{
-                width: '50px',
-                height: '50px',
-                fontSize: '8px',
-                marginRight: '0px',
-                cursor: 'pointer',
-              }}
-              type="button"
-              onClick={handleLogout}
-            >
-              Выйти
-            </MediaButton>
+            <AuthDiv>
+              <Greeting>
+                привет, <br />
+                {user}
+              </Greeting>
+              <MediaButton
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  fontSize: '8px',
+                  marginRight: '0px',
+                  cursor: 'pointer',
+                  marginTop: 'auto',
+                  marginBottom: 'auto',
+                }}
+                type="button"
+                onClick={handleLogout}
+              >
+                Выйти
+              </MediaButton>
+            </AuthDiv>
           </>
         )}
       </Header>

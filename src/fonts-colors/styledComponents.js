@@ -110,6 +110,40 @@ export const NavigationDiv = styled.div`
   }
 `;
 
+export const AuthDiv = styled.div`
+  display: flex;
+width:50px;
+
+  @media ${device.tablet} {
+ 
+    justify-content: space-between;
+    width: 120px;
+  }
+
+    @media ${device.desctop} {
+            width: 150px;
+    }
+  }
+`;
+
+export const Greeting = styled.p`
+  display: none;
+
+  @media ${device.tablet} {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  @media ${device.desctop} {
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+  }
+`;
+
 export const BurgerButton = styled.button`
   width: 24px;
   height: 24px;

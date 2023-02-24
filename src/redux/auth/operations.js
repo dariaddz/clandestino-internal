@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// axios.defaults.baseURL =
-//   'https://clandestino-internal-back.onrender.com/api/auth/';
-axios.defaults.baseURL = 'http://localhost:8090/api/auth/';
+axios.defaults.baseURL =
+  'https://clandestino-internal-back.onrender.com/api/auth/';
+// axios.defaults.baseURL = 'http://localhost:8090/api/auth/';
 
 // //   add JWT
 // const setAuthHeader = token => {
