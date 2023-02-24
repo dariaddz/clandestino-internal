@@ -3,7 +3,6 @@ import ProgramList from '../../components/ProgramList';
 import Filter from '../../components/Filter';
 
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
