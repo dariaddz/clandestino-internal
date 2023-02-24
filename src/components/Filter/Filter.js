@@ -2,13 +2,13 @@ import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { changeFilter } from '../../redux/filterSlice';
 import color from '../../fonts-colors/colors';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import s from './Filter.module.css';
 
 import {
   // SearchForm,
   Page,
-  FormTitle,
+  // FormTitle,
 } from '../../fonts-colors/styledComponents';
 
 // ========блок с заголовком-заглушкой ============
