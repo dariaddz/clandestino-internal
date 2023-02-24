@@ -4,13 +4,16 @@ import Modal from '../../components/Modal';
 import Loader from '../Loader';
 import { useGetMusicQuery } from '../../redux/musicApi'; //rtk query
 import { useState } from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function MusicItem() {
   const { data, isFetching } = useGetMusicQuery(); //rtk query
   const [isOpen, setIsOpen] = useState(false);
   const [musicId, setMusicId] = useState();
+  const { userData } = useAuth;
 
-  console.log('musicId в начале', musicId);
+  console.log('userdata', userData);
+
   return (
     <>
       {isFetching && !data && <Loader />}

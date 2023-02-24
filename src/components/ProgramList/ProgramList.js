@@ -2,7 +2,7 @@ import React from 'react';
 import { Page } from '../../fonts-colors/styledComponents';
 import { Thumb, MusicName } from '../../fonts-colors/styledComponents';
 
-// import Modal from '../../components/Modal';
+import Modal from '../../components/Modal';
 import Loader from '../Loader';
 import { useGetMusicQuery } from '../../redux/musicApi'; //rtk query
 import { useState } from 'react';
@@ -29,13 +29,13 @@ export default function ProgramList() {
             </Thumb>
           )
       )}
-      {/* <Modal
+      <Modal
         id={musicId}
         open={isOpen}
         onClose={() => {
           setIsOpen(false);
         }}
-      /> */}
+      />
     </Page>
   );
 }

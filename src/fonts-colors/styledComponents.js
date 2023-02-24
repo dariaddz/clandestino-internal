@@ -341,7 +341,7 @@ export const CloseBtn = styled.button`
     box-shadow: 0 7px 9px -4px ${color.accentColor};
   }
 `;
-export const MediaListUl = styled.li`
+export const MediaListUl = styled.ul`
   text-overflow: ellipsis;
   overflow: hidden;
   margin-left: 20px;

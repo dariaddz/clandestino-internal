@@ -64,8 +64,8 @@ export default function Modal({ id, open, onClose }) {
         {/* {data && (  */}
         {data && !isFetching && (
           <>
-            <MusicName>{data.musicName}</MusicName>
-            {/* <MediaListDiv>
+            <MusicName>{data.musicItem.musicName}</MusicName>
+            <MediaListDiv>
               {data?.musicItem.video.length > 0 && (
                 <VideoList>
                   <MediaButton>видео</MediaButton>
@@ -99,7 +99,7 @@ export default function Modal({ id, open, onClose }) {
                   </MediaListUl>
                 </AudioList>
               )}
-            </MediaListDiv> */}
+            </MediaListDiv>
             <CloseBtn onClick={onClose}> X</CloseBtn>
           </>
         )}
