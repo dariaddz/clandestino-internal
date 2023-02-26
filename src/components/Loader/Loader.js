@@ -3,7 +3,12 @@ import { ColorRing } from 'react-loader-spinner';
 import color from '../../fonts-colors/colors';
 export default function Loader() {
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
       <ColorRing
         //   visible={true}
         height="120"

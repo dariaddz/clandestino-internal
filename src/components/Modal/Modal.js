@@ -13,7 +13,9 @@ import {
   MediaListUl,
 } from '../../fonts-colors/styledComponents';
 import { useGetMusicByIdQuery } from '../../redux/musicApi';
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
+
+import Loader from '../Loader';
 const portal = document.querySelector('#portal');
 
 export default function Modal({ id, open, onClose }) {
@@ -42,17 +44,19 @@ export default function Modal({ id, open, onClose }) {
   function renderList(item) {
     console.log(item);
     return (
-      <LinkListItem key={item}>
-        <a
-          style={{ color: 'black' }}
-          href={`${item}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {item}
-          {/* https://disk.yandex.ru/d/vCJBlMLhTXGIzA */}
-        </a>
-      </LinkListItem>
+      <>
+        <LinkListItem key={item}>
+          <a
+            style={{ color: 'black' }}
+            href={`${item}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {item}
+            {/* https://disk.yandex.ru/d/vCJBlMLhTXGIzA */}
+          </a>
+        </LinkListItem>
+      </>
     );
   }
 
@@ -60,8 +64,9 @@ export default function Modal({ id, open, onClose }) {
   return createPortal(
     <Backdrop onClick={handleBackdropclick}>
       <ModalDiv>
-        {isFetching && !data && !id && <div>Загружжжжжжаем....</div>}
-        {/* {data && (  */}
+        <Suspense fallback={<Loader />}></Suspense>
+        {isFetching && <Loader />}
+
         {data && !isFetching && (
           <>
             <MusicName>{data.musicItem.musicName}</MusicName>

@@ -5,7 +5,7 @@ lazy
 import { useDispatch } from "react-redux";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import {fetchCurrentUser} from './redux/auth/operations'
-import { useAuth } from "./hooks/useAuth";
+// import { useAuth } from "./hooks/useAuth";
 
 import Layout from './components/Layout';
 import MainPage from "./pages/WellcomePage/WellcomePage";
@@ -24,10 +24,9 @@ const UploadPage = lazy(() => import('./pages/UploadPage'));
 const ProgramPage = lazy(() => import('./pages/ProgramPage'));
 
 export const App = () => {
-
   
   const dispatch = useDispatch()
-  const { isFetchingCurrentUser } = useAuth()
+  // const { isFetchingCurrentUser } = useAuth()
   
  useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -38,7 +37,7 @@ export const App = () => {
   
     return (
       <>
-        {isFetchingCurrentUser ? <Loader /> : (
+        {/* {isFetchingCurrentUser ? <Loader /> : ( */}
           <Suspense fallback={
           <Loader />
           // <Loader />
@@ -83,7 +82,7 @@ export const App = () => {
             
             </Route>
           </Routes>
-        </Suspense>        )}
+        </Suspense>        
         
       </>
     )

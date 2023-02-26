@@ -24,6 +24,7 @@ export default function MusicItem() {
             <Thumb
               key={musicItem._id}
               onClick={() => {
+                // console.log('CLICK');
                 setIsOpen(true);
                 setMusicId(musicItem._id);
                 console.log(musicId);
