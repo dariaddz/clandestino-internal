@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logIn, logOut, fetchCurrentUser } from './operations';
+import { toast } from 'react-toastify';
 
 const resetToInitialState = state => {
   state.userName = null;
@@ -23,6 +24,7 @@ const authSlice = createSlice({
     builder
       .addCase(logIn.pending, (state, action) => {
         state.isPending = true;
+        toast.success('ищем музыку для вас');
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.token = action.payload.token;

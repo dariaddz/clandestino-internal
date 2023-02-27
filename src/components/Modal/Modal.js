@@ -21,9 +21,6 @@ const portal = document.querySelector('#portal');
 export default function Modal({ id, open, onClose }) {
   const { data, isFetching } = useGetMusicByIdQuery(id); //rtk query
 
-  console.log('id ', id);
-  console.log('data в модалке', data);
-
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {

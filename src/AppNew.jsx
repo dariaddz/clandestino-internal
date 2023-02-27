@@ -12,6 +12,7 @@ import MainPage from "./pages/WellcomePage/WellcomePage";
 import Loader from "./components/Loader/Loader";
 
 
+
 import { RestrictedRoute } from "./components/routs/RestrictedRoute";
 import { PrivateRoute } from "./components/routs/PrivateRoute";
 

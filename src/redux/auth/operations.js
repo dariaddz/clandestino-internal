@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+// import { toast } from 'react-toastify';
 
 axios.defaults.baseURL =
   'https://clandestino-internal-back.onrender.com/api/auth/';
@@ -30,6 +31,7 @@ export const logIn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const res = await axios.post('login', credentials);
+
       console.log('data while login', res.data.user);
       console.log('token while login', res.data.user.token);
 
@@ -76,7 +78,6 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.get('logout');
     token.unset();
-    console.log();
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }

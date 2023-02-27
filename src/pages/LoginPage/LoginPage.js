@@ -5,28 +5,25 @@ import {
   PassForm,
   FormTitle,
 } from '../../fonts-colors/styledComponents';
-// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { logIn } from '../../redux/auth/operations';
 import { useAuth } from '../../hooks/useAuth';
 import Loader from '../../components/Loader';
 
-export default function LoginPage() {
-  // const [pass, setPass] = useState('');
+// import { useState } from 'react';
 
-  // const handlePassChange = event => {
-  //   // console.log(event.target.value);
-  //   setPass(event.target.value);
-  // };
+export default function LoginPage() {
+  // const [formDisabled, setFormDisabled] = useState('false');
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { isPending } = useAuth();
 
-  const handleSubmit = evt => {
+  // const [formDisabled, setFormDisabled] = useState(false);
+
+  function handleSubmit(evt) {
     evt.preventDefault();
     const form = evt.currentTarget;
+
     dispatch(
       logIn({
         userName: form.elements.userName.value,
@@ -34,14 +31,10 @@ export default function LoginPage() {
       })
     );
 
-    if (isPending) {
-      return <Loader />;
-    }
-
+    // dispatch(setFormDisabled(true), isPending);
+    // console.log(formDisabled);
     form.reset();
-    navigate('/music', { replace: true });
-    //   setPass('');
-  };
+  }
 
   return (
     <Page>
@@ -63,8 +56,22 @@ export default function LoginPage() {
             // onChange={handlePassChange}
           />
         </label>
-
-        <MediaButton
+        {isPending ? (
+          <Loader />
+        ) : (
+          <MediaButton
+            id="mediaButton"
+            style={{
+              backgroundColor: `${color.accentColor}`,
+              cursor: 'pointer',
+            }}
+            type="submit"
+          >
+            Войти
+          </MediaButton>
+        )}
+        {/* <MediaButton
+          className={`${s.disabled} ${s.mediaButton}`}
           style={{
             backgroundColor: `${color.accentColor}`,
             cursor: 'pointer',
@@ -72,7 +79,7 @@ export default function LoginPage() {
           type="submit"
         >
           Войти
-        </MediaButton>
+        </MediaButton> */}
       </form>
     </Page>
   );

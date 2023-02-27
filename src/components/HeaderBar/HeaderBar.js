@@ -22,9 +22,7 @@ import Loader from '../Loader';
 
 export default function HeaderBar() {
   const { isLoggedIn, user, isFetchingCurrentUser } = useAuth();
-  console.log('user', user);
 
-  // ????
   const dispatch = useDispatch();
   const handleLogout = () => dispatch(logOut());
   return (

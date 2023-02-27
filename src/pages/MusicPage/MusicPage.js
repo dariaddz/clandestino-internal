@@ -11,8 +11,7 @@ export default function MusicPage() {
   const { isLoggedIn } = useAuth();
 
   const navigate = useNavigate();
-  // const isLoggedIn = useSelector(state => state.users.isLoggedIn);
-  console.log('isLoggedIn', isLoggedIn);
+
   useEffect(() => {
     if (!isLoggedIn) {
       navigate('/login');
@@ -20,12 +19,7 @@ export default function MusicPage() {
   }, [isLoggedIn, navigate]);
   return (
     <>
-      <Suspense
-        fallback={
-          // <div>Загружжжжжжаем....</div>
-          <Loader />
-        }
-      ></Suspense>
+      <Suspense fallback={<Loader />}></Suspense>
       <Filter />
       <MusicList />
     </>
